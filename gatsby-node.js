@@ -33,7 +33,7 @@ module.exports.createPages = async({ graphql, actions}) => {
   `);
 
   res.data.allMarkdownRemark.edges.forEach(edge => {
-    const { slug } = edge.fields;
+    const { slug } = edge.node.fields;
 
     createPage({
       component: blogTemplate,
